@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+	/* primary */
+	--strong-cyan: hsl(172, 67%, 45%);
+
+	/* neutral */
+	--very-dark-cyan: hsl(183, 100%, 15%);
+	--dark-grayish-cyan: hsl(186, 14%, 43%);
+	--grayish-cyan: hsl(184, 14%, 56%);
+	--light-grayish-cyan: hsl(185, 41%, 84%);
+	--very-light-grayish-cyan: hsl(189, 41%, 97%);
+	--white: hsl(0, 0%, 100%);
+}
+
+body {
+	font: 1rem "Space Mono", monospace;
+	background-color: var(--light-grayish-cyan);
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+}
+
+.logo {
+	text-align: center;
+	padding: 2rem;
+}
+
+form {
+	background-color: var(--white);
+	color: var(--dark-grayish-cyan);
+	padding: 1.5rem;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 46rem;
+}
+
+.white-left {
+	padding: 0 1.5rem 2rem 1rem;
+}
+
+/* input */
+#bill-amount,
+#group-size {
+	font: 24px "Space Mono", monospace;
+	border-radius: 0.5rem;
+	border: 0 solid;
+	text-align: right;
+	width: 80%;
+	padding-right: 1rem;
+	color: var(--very-dark-cyan);
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#bill-amount:focus,
+#group-size:focus,
+#tip6:focus {
+	border: 2px solid var(--strong-cyan);
+	outline: none;
+	color: var(--very-dark-cyan);
+}
+
+/* adds image to input */
+#bill-amount {
+	background: var(--very-light-grayish-cyan) url(./images/icon-dollar.svg) left
+		no-repeat;
+	background-origin: content-box;
+	padding-left: 1rem;
+}
+
+#group-size {
+	background: var(--very-light-grayish-cyan) url(./images/icon-person.svg) left
+		no-repeat;
+	background-origin: content-box;
+	padding-left: 1rem;
+}
+
+/* get rid of arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.tip-percent {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 0.5fr));
+	gap: 0.5rem;
+}
+
+#tip1:hover,
+#tip2:hover,
+#tip3:hover,
+#tip4:hover,
+#tip5:hover {
+	background-color: hsla(171.892, 62%, 77%, 1);
+}
+
+#tip1,
+#tip2,
+#tip3,
+#tip4,
+#tip5,
+#tip6 {
+	font: 1.5rem "Space Mono", monospace;
+	background-color: var(--very-dark-cyan);
+	border: 0;
+	color: var(--white);
+	border-radius: 0.5rem;
+	text-align: center;
+}
+
+#tip6 {
+	background-color: var(--very-light-grayish-cyan);
+	color: var(--dark-grayish-cyan);
+	text-align: right;
+	font-size: 1.5rem;
+}
+
+#tip6::placeholder {
+	text-align: center;
+}
+
+::placeholder {
+	color: var(--grayish-cyan);
+}
+
+.cyan {
+	background-color: var(--very-dark-cyan);
+	padding: 2rem;
+	border-radius: 1rem;
+	text-align: center;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tip-amount,
+.total {
+	color: var(--white);
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+}
+
+.per {
+	color: var(--dark-grayish-cyan);
+}
+
+.bill-total {
+	color: var(--strong-cyan);
+}
+
+.reset-button {
+	font-family: "Space Mono", monospace;
+	background-color: hsla(181.895, 79%, 24%, 1);
+	color: var(--dark-grayish-cyan);
+	border: 0;
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+	width: 100%;
+}
+
+.reset-button:hover {
+	background-color: hsla(171.892, 62%, 77%, 1);
+}
+
+@media (max-width: 600px) {
+	body {
+		display: grid;
+		place-items: center;
+		min-height: 100vh;
+	}
+
+	.tip-percent {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		width: auto;
+	}
+
+	.cyan {
+		width: auto;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
