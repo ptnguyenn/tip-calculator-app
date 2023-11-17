@@ -42,8 +42,7 @@ form {
 }
 
 /* input */
-#bill-amount,
-#group-size {
+.white-left input {
 	font: 24px "Space Mono", monospace;
 	border-radius: 0.5rem;
 	border: 0 solid;
@@ -55,11 +54,9 @@ form {
 	width: 100%;
 }
 
-#bill-amount:focus,
-#group-size:focus,
-#tip6:focus {
-	border: 2px solid var(--strong-cyan);
-	outline: none;
+input[type="number"]:focus {
+	border: 2px solid;
+	outline-color: var(--strong-cyan);
 	color: var(--very-dark-cyan);
 }
 
@@ -91,20 +88,8 @@ input::-webkit-inner-spin-button {
 	gap: 0.5rem;
 }
 
-#tip1:hover,
-#tip2:hover,
-#tip3:hover,
-#tip4:hover,
-#tip5:hover {
-	background-color: hsla(171.892, 62%, 77%, 1);
-}
-
-#tip1,
-#tip2,
-#tip3,
-#tip4,
-#tip5,
-#tip6 {
+div.tip-percent button {
+	background-color: red;
 	font: 1.5rem "Space Mono", monospace;
 	background-color: var(--very-dark-cyan);
 	border: 0;
@@ -113,11 +98,18 @@ input::-webkit-inner-spin-button {
 	text-align: center;
 }
 
+div.tip-percent button:hover,
+div.tip-percent button:focus {
+	background-color: hsla(171.892, 62%, 77%, 1);
+}
+
 #tip6 {
+	font: 1.5rem "Space Mono", monospace;
 	background-color: var(--very-light-grayish-cyan);
+	border: 0;
 	color: var(--dark-grayish-cyan);
+	border-radius: 0.5rem;
 	text-align: right;
-	font-size: 1.5rem;
 }
 
 #tip6::placeholder {
@@ -151,8 +143,10 @@ input::-webkit-inner-spin-button {
 	color: var(--dark-grayish-cyan);
 }
 
-.bill-total {
+#tip-per,
+#total-per {
 	color: var(--strong-cyan);
+	font-size: 2rem;
 }
 
 .reset-button {

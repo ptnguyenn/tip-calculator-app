@@ -27,25 +27,25 @@
 						<div class="white-left">
 
 							<div class="bill">
-								<p>Bill</p>
-								<input type="number" id="bill-amount" placeholder="0" />
+								<p>Bill</p> <span id="error"></span>
+								<input type="number" id="bill-amount" placeholder="0" required/>
 							</div>
 
 							<div class="tip">
 								<p>Select Tip %</p>
 								<div class="tip-percent">
-									<button type="button" id="tip1" onclick="calcTip()">5%</button>
-									<button type="button" id="tip2">10%</button>
-									<button type="button" id="tip3">15%</button>
-									<button type="button" id="tip4">25%</button>
-									<button type="button" id="tip5">50%</button>
-									<input type="number" id="tip6" placeholder="Custom"></input>
+									<button type="button" class="btn" id="tip1" onclick="calcTip()">5%</button>
+									<button type="button" class="btn" id="tip2" onclick="calcTip()">10%</button>
+									<button type="button" class="btn" id="tip3" onclick="calcTip()">15%</button>
+									<button type="button" class="btn" id="tip4" onclick="calcTip()">25%</button>
+									<button type="button" class="btn" id="tip5" onclick="calcTip()">50%</button>
+									<input type="number" id="tip6" placeholder="Custom" onchange="calcTip()"></input>
 								</div>
 							</div>
 
 							<div class="group">
-								<p>Number of People</p>
-								<input type="number" id="group-size" min="1" placeholder="0" />
+								<p>Number of People</p> <span id="error"></span>
+								<input type="number" id="group-size" min="1" placeholder="0" required/>
 							</div>
 							
 						</div>
@@ -58,21 +58,21 @@
 										<p class="per">/ person</p>
 									</div>
 	
-									<h2 class="bill-total">$0.00</h2>
+									<h2 id="tip-per">$0.00</h2>
 								</div>
 	
 								<div class="total">
 									<div class="right">
-										<p>Total</p>
+										<p id="idk">Total</p>
 										<p class="per">/ person</p>
 									</div>
 	
-									<h2 class="bill-total">$0.00</h2>
+									<h2 id="total-per">$0.00</h2>
 								</div>
 							</div>
 
 							<div>
-								<input type="reset" value="RESET" class="reset-button" ></input>
+								<input type="reset" value="RESET" class="reset-button" onclick="resetForm()"></input>
 							</div>
 						</div>
 					</form>
